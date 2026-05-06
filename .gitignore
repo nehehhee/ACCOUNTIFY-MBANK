@@ -1,0 +1,19 @@
+*.xlsx
+*.pdf
+*.html
+__pycache__/
+*.pyc
+.env
+build/
+dist/
+icon.icns
+icon.iconset/
+*.exe
+# PyInstaller auto-generated specs (nie bank_converter.spec)
+warn-*.txt
+xref-*.html
+POSTUP.txt
+accounts.json
+lib/
+.venv/
+Bank Converter.app
