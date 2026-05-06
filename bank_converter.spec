@@ -4,21 +4,19 @@ import sys
 from pathlib import Path
 from PyInstaller.utils.hooks import collect_all
 
-# Zbieraj všetky súbory pre knižnice ktoré PyInstaller nevie nájsť sám
 pdf_datas,   pdf_bins,   pdf_hidden   = collect_all('pdfplumber')
 miner_datas, miner_bins, miner_hidden = collect_all('pdfminer')
-pyvis_datas, pyvis_bins, pyvis_hidden = collect_all('pyvis')
 
 a = Analysis(
     ['mbank_konvertor.py'],
     pathex=['.'],
-    binaries=pdf_bins + miner_bins + pyvis_bins,
+    binaries=pdf_bins + miner_bins,
     datas=[
         ('logo.png', '.'),
         ('icon.ico', '.'),
         ('banks',    'banks'),
         ('core',     'core'),
-    ] + pdf_datas + miner_datas + pyvis_datas,
+    ] + pdf_datas + miner_datas,
     hiddenimports=[
         'pdfplumber',
         'pdfminer',
@@ -39,9 +37,7 @@ a = Analysis(
         'PIL',
         'PIL.Image',
         'PIL.ImageTk',
-        'pyvis',
-        'pyvis.network',
-    ] + pdf_hidden + miner_hidden + pyvis_hidden,
+    ] + pdf_hidden + miner_hidden,
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PYINSTALLER="/Users/momo/ClaudeCode/MBANK-konvertor/.venv/bin/pyinstaller"
+PYINSTALLER=$(which pyinstaller 2>/dev/null || echo ".venv/bin/pyinstaller")
 
 echo "🔧 Čistím predchádzajúci build..."
 rm -rf build/ dist/
