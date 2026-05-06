@@ -17,3 +17,5 @@ accounts.json
 lib/
 .venv/
 Bank Converter.app
+.DS_Store
+.claude/
